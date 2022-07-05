@@ -1,6 +1,7 @@
 import sys
 import torch
 from darknet2pytorch import Darknet
+from pathlib import Path
 
 
 def transform_to_onnx(cfgfile, weightfile, batch_size=1, onnx_file_name=None):
