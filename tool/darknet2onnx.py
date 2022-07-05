@@ -12,8 +12,8 @@ def transform_to_onnx(cfgfile, weightfile, batch_size=1, onnx_file_name=None):
     print('Loading weights from %s... Done!' % (weightfile))
 
     dynamic = False
-    if batch_size <= 0:
-        dynamic = True
+    #if batch_size <= 0:
+     #   dynamic = True
 
     input_names = ["input"]
     output_names = ['boxes', 'confs']
@@ -48,7 +48,7 @@ def transform_to_onnx(cfgfile, weightfile, batch_size=1, onnx_file_name=None):
                           x,
                           onnx_file_name,
                           export_params=True,
-                          opset_version=11,
+                          opset_version=13,
                           do_constant_folding=True,
                           input_names=input_names, output_names=output_names,
                           dynamic_axes=None)
