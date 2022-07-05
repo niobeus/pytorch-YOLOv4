@@ -10,7 +10,7 @@ def transform_to_onnx(cfgfile, weightfile, batch_size=1, onnx_file_name=None):
     model.print_network()
     model.load_weights(weightfile)
     print('Loading weights from %s... Done!' % (weightfile))
-
+    batch_size = 1
     dynamic = False
     #if batch_size <= 0:
      #   dynamic = True
