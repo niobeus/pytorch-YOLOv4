@@ -20,6 +20,7 @@ def transform_to_onnx(cfgfile, weightfile, batch_size=1, onnx_file_name=None):
     
     onnx_file_name = Path(weightfile)
     onnx_file_name.rename(onnx_file_name.with_suffix('.onnx'))
+    onnx_file_name = '/'+onnx_file_name.name
 
     if dynamic:
         x = torch.randn((1, 3, model.height, model.width), requires_grad=True)
